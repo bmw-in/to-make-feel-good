@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>To Make Feel Good ✨</title>
+
+<style>
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(135deg, #ffe4ec, #f3e8ff, #fff7fb);
+  color: #444;
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+/* Container */
+.container {
+  max-width: 680px;
+  margin: auto;
+  padding: 60px 20px 80px;
+}
+
+/* Top text */
+.top {
+  font-size: 0.95rem;
+  color: #888;
+  margin-bottom: 30px;
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
+}
+
+/* Message */
+.message p {
+  margin-bottom: 26px;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 1s ease;
+}
+
+/* Fade on scroll */
+.message p.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Subtle emoji glow */
+.message p span {
+  text-shadow: 0 0 6px rgba(255, 150, 180, 0.4);
+}
+
+/* Floating hearts */
+.heart {
+  position: fixed;
+  bottom: -10px;
+  font-size: 12px;
+  opacity: 0.4;
+  animation: floatUp linear forwards;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-120vh);
+    opacity: 0;
+  }
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* Small scroll hint */
+.hint {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #aaa;
+  margin-top: 20px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="top">for you 💗</div>
+
+  <div class="message">
+
+```
+<p>melaa bacchaaa🫶🫶🫶</p>
+
+<p>
+  you know what, tum na bohot strong ho, soo muchhh strongg… jitna tum khud ko samajhti ho usse bohot zyada. jo bhi chal raha hai na tumhare dimaag me, jo bhi feel ho raha hai, isssokkkkk. dekh, tujhe har time perfect ya stable feel karna zaroori nhi hai, and when you are not, pretend mat krna.
+</p>
+
+<p>
+  aur ek baat samjh leee, you will never lose me, and i will never leave youuu💋💋. chahe tum anxious ho, low ho, ya kuch bhi feel kar rahi ho, mai yahi huuu, i am here for you alwayss 🫶🫶🫶, and hn, tumahre har version, and har phase me❤️‍🩹❤️‍🩹❤️‍🩹❤️‍🩹❤️‍🩹
+</p>
+
+<p>
+  aur agar kabhi tumhe lage ki memory blur ho rahi hai, cheezen bhool ja rhi ho, ya sab ajeeb lag raha hai… tab bhi issookkbacchaaaa🫶🫶🫶🫶✨✨✨✨💗💗💗, mai yaad rakh lunga teri cheezen jo yaad rakhni important hongi, and dekh sab theek ho jayega. tum bas achhe se rhoo, apna dhyaan doo, okieeee??? mai hu na tumhare sathh✨❤️‍🩹
+</p>
+
+<p>
+  tumhe khush dekhna achha lagta hai. i want ki mai tumko duniya me sabse zyada khush rakh pau. and yes, i want to understand you, in the ways no one ever tried to understand you...🥺🥺❤️‍🩹
+</p>
+
+<p>
+  take your time, jisse bhi achha laga kre, kra kro✨✨✨ and hn, meri tension mat liyaa krooo meri Rashmalaiiiiii 💗💗💗💗🫶🫶🫶🫶💋💋💋💋💋 mai yahi huuu, kahi nhi ja rhaa, never, never ever, neverrrrrrrrrrrrr❤️‍🩹❤️‍🩹❤️‍🩹❤️‍🩹
+</p>
+
+<p>
+  I Love you soooooooooooooooooooooooooo muchhhhhh mera bacchaaaaaaaaa🫶🫶🫶🫶🫶🫶💗💗💗✨✨✨✨✨✨💋💋💋💋💋💋❣️❣️❣️❣️❣️❣️💝💝💝💝💝💝💞💞💞💕💕💕💕💕
+</p>
+```
+
+  </div>
+
+  <div class="hint">scroll slowly ✨</div>
+
+</div>
+
+<script>
+/* Fade-in on scroll */
+const paragraphs = document.querySelectorAll('.message p');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+}, { threshold: 0.2 });
+
+paragraphs.forEach(p => observer.observe(p));
+
+/* Floating hearts (very subtle) */
+setInterval(() => {
+  const heart = document.createElement('div');
+  heart.className = 'heart';
+  heart.innerText = ['💗','✨','🫶'][Math.floor(Math.random()*3)];
+  heart.style.left = Math.random() * 100 + 'vw';
+  heart.style.animationDuration = (8 + Math.random()*6) + 's';
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 14000);
+}, 1200);
+</script>
+
+</body>
+</html>
